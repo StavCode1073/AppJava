@@ -63,15 +63,24 @@ public class AppJava {
         configList.add(password);
         configList.add("account.move");
         configList.add("create");
-                
-        paramMap.put("name", "INV/2022/06/0015");
+        //paramMap.put("name", "INV/2022/06/0028");
+        paramMap.put("date", "2022-06-15");
         paramMap.put("move_type", "out_invoice");
         paramMap.put("partner_id", 7);
-        
-      
-        paramMapList.put("move_name","INV/2022/06/0015");
-        paramMap.put("invoice_line_ids", new Object[]{ Integer.valueOf(0), Integer.valueOf(0), paramMapList} );
+        paramMap.put("invoice_date", "2022-06-15");
+        paramMap.put("currency_id", 33);
+        //paramMap.put("invoice_payment_term_id", "");
+
+        Object[] object = new Object[]{2};
+        //paramMapList.put("move_name","INV/2022/06/0028");
+        paramMapList.put("product_id", 2);
+        paramMapList.put("product_uom_id", 1);
+        paramMapList.put("quantity", 1.00);
+        paramMapList.put("price_unit", 12.00);
+        paramMapList.put("tax_ids", new Object[]{2});
+        paramMap.put("invoice_line_ids", new Object[]{  paramMapList} );
         System.out.println(paramMapList);
+        
         paramList.add(paramMap);
         configList.add(paramList);
 
